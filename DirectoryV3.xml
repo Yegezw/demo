@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <trees>
     <tree path="/guava/src/main/java/com/zzw/string" title="字符串处理"/>
+    <tree path="/guava/src/main/java/com/zzw/base" title="基础"/>
 </trees>
