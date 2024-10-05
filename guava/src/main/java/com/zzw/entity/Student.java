@@ -1,5 +1,6 @@
 package com.zzw.entity;
 
+import com.google.common.base.MoreObjects;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
@@ -12,6 +13,9 @@ public class Student
     @Override
     public String toString()
     {
-        return String.format("Student{age = %s, score = %s}", age, score);
+        return MoreObjects.toStringHelper(Student.class)
+                .add("age", age)
+                .add("score", score)
+                .toString();
     }
 }
