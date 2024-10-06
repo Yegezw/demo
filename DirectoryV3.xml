@@ -2,4 +2,5 @@
 <trees>
     <tree path="/guava/src/main/java/com/zzw/string" title="字符串处理"/>
     <tree path="/guava/src/main/java/com/zzw/base" title="基础"/>
+    <tree path="/guava/src/main/java/com/zzw/range" title="范围"/>
 </trees>

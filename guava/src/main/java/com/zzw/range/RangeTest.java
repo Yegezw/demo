@@ -1,4 +1,4 @@
-package com.zzw.base;
+package com.zzw.range;
 
 import com.google.common.collect.BoundType;
 import com.google.common.collect.Maps;
@@ -29,6 +29,51 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class RangeTest
 {
+
+    /*
+     * Range.open()
+     * Range.closed()
+     *
+     * Range.openClosed()
+     * Range.closedOpen()
+     *
+     * Range.lessThan()
+     * Range.greaterThan()
+     *
+     * Range.atLeast()
+     * Range.atMost()
+     *
+     * Range.all()
+     * Range.singleton()
+     *
+     * Range<C> encloseAll(Iterable<C> values)
+     *
+     * Range<C> upTo(C endpoint, BoundType boundType)
+     * Range<C> downTo(C endpoint, BoundType boundType)
+     * Range<C> range(C lower, BoundType lowerType, C upper, BoundType upperType)
+     *
+     * Range<C> canonical(DiscreteDomain<C> domain) 规范形式
+     *
+     * **************************************************************************
+     *
+     * Range.contains()
+     * Range.containsAll()
+     * Range.isEmpty()
+     *
+     * Range.hasLowerBound()
+     * Range.hasUpperBound()
+     *
+     * Range.lowerEndpoint()
+     * Range.upperEndpoint()
+     *
+     * Range.lowerBoundType()
+     * Range.upperBoundType()
+     *
+     * Range.encloses()
+     * Range.isConnected()
+     * Range.intersection()
+     * Range.span()
+     */
 
     @Test
     public void test1()

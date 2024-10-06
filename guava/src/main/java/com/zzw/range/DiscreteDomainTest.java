@@ -1,4 +1,4 @@
-package com.zzw.base;
+package com.zzw.range;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.ContiguousSet;

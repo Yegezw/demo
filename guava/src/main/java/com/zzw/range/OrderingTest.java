@@ -1,4 +1,4 @@
-package com.zzw.base;
+package com.zzw.range;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
@@ -15,6 +15,42 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class OrderingTest
 {
+
+    /*
+     * Ordering.compare()
+     *
+     * Ordering.compound()
+     *
+     * Ordering.allEqual()
+     * Ordering.arbitrary()
+     * Ordering.from(Comparator)
+     *
+     * Ordering.natural()
+     * Ordering.usingToString()
+     *
+     * Ordering.explicit()
+     *
+     * ******************************
+     *
+     * Ordering.nullsFirst()
+     * Ordering.nullsLast()
+     *
+     * Ordering.reverse()
+     *
+     * Ordering.onResultOf()
+     *
+     * Ordering.lexicographical()
+     *
+     * Ordering.sortedCopy()
+     * Ordering.immutableSortedCopy()
+     *
+     * Ordering.isOrdered()
+     * Ordering.isStrictlyOrdered()
+     * Ordering.leastOf()
+     * Ordering.greatestOf()
+     * Ordering.min()
+     * Ordering.max()
+     */
 
     @Test
     public void test1()
