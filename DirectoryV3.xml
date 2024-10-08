@@ -5,4 +5,5 @@
     <tree path="/guava/src/main/java/com/zzw/range" title="范围"/>
     <tree path="/guava/src/main/java/com/zzw/collection" title="容器"/>
     <tree path="/guava/src/main/java/com/zzw/collection/util" title="容器工具"/>
+    <tree path="/guava/src/main/java/com/zzw/functional" title="函数式"/>
 </trees>

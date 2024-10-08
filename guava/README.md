@@ -22,3 +22,7 @@
 - Iterables
 - Lists + Sets + Maps
 - Multisets + Multimaps + Tables
+
+函数式
+- Function + Functions
+- Predicate + Predicates
