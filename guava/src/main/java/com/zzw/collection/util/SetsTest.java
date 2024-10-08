@@ -41,8 +41,12 @@ public class SetsTest
     public void test2()
     {
         /*
+         * 子集
+         * NavigableSet<K> subSet(NavigableSet<K> set, Range<K> range)
+         *
          * 子集集
          * Sets.powerSet(Set)
+         * Sets.combinations(Set, int)
          *
          * 笛卡尔积
          * Sets.cartesianProduct(List<Set>)

@@ -31,6 +31,11 @@ public class MultimapTest
      * 除了不可变的实现之外，这些实现中的每一个都支持 null 键和值
      */
 
+    /*
+     * Multimap
+     * SortedSetMultimap
+     */
+
     @Test
     public void test()
     {

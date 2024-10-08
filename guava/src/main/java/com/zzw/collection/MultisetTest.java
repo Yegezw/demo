@@ -33,6 +33,54 @@ public class MultisetTest
      * ImmutableMap         ImmutableMultiset         否
      */
 
+    /*
+     * Multiset
+     *
+     * add(E)
+     * add(E, int)
+     *
+     * contains(Object)
+     * containsAll(Collection<?>)
+     *
+     * count(Object)
+     * setCount(E)
+     * setCount(E, int)
+     *
+     * remove(Object)
+     * remove(Object, int)
+     * removeAll(Collection<?>)
+     * retainAll(Collection<?>)
+     *
+     * Set<E>        elementSet()
+     * Set<Entry<E>> entrySet()
+     *
+     * equals()
+     * forEach(Consumer<? super E>)
+     * forEachEntry(ObjIntConsumer<? super E> action)
+     * Iterator<E> iterator()
+     * size()
+     *
+     * **********************************************
+     *
+     * SortedMultiset
+     *
+     * Comparator<? super E> comparator()
+     *
+     * Entry<E> firstEntry()
+     * Entry<E> lastEntry()
+     *
+     * Entry<E> pollFirstEntry()
+     * Entry<E> pollLastEntry()
+     *
+     * NavigableSet<E> elementSet()
+     * Set<Entry<E>> entrySet()
+     *
+     * SortedMultiset<E> descendingMultiset()
+     * SortedMultiset<E> headMultiset(E upperBound, BoundType boundType)
+     * SortedMultiset<E> tailMultiset(E lowerBound, BoundType boundType)
+     * SortedMultiset<E> subMultiset(E lowerBound, BoundType lowerBoundType, E upperBound, BoundType upperBoundType)
+     */
+
     @Test
     public void test()
     {

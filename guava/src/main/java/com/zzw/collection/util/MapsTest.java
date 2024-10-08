@@ -72,6 +72,9 @@ public class MapsTest
     public void test4()
     {
         /*
+         * 子集
+         * NavigableMap<K, V> subMap(NavigableMap<K, V> map, Range<K> range)
+         *
          * 过滤
          * Maps.filterKeys(Map, Predicate)
          * Maps.filterValues(Map, Predicate)
