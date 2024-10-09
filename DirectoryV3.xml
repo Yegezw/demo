@@ -7,4 +7,5 @@
     <tree path="/guava/src/main/java/com/zzw/collection/util" title="容器工具"/>
     <tree path="/guava/src/main/java/com/zzw/functional" title="函数式"/>
     <tree path="/guava/src/main/java/com/zzw/base/util" title="基础类型工具类"/>
+    <tree path="/guava/src/main/java/com/zzw/base/math" title="数学运算工具类"/>
 </trees>
