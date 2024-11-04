@@ -1,6 +1,15 @@
 package com.zzw.collection.util;
 
+import com.google.common.base.Functions;
+import com.google.common.collect.Maps;
+import com.google.common.collect.Sets;
 import org.junit.jupiter.api.Test;
+
+import java.util.NavigableMap;
+import java.util.TreeSet;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
  * Maps
@@ -89,5 +98,16 @@ public class MapsTest
          * ImmutableMap<K, V> Maps.toMap(Iterable<K> keys, Function<? super K, V> valueFunction)          预先计算所有值，返回不可变映射
          * ImmutableMap<K, V> Maps.uniqueIndex(Iterable<V> values, Function<? super V, K> keyFunction)    预先计算所有键，返回不可变映射
          */
+        TreeSet<String> set = Sets.newTreeSet();
+        set.add("1");
+        set.add("2");
+        set.add("3");
+
+        NavigableMap<String, String> map = Maps.asMap(set, Functions.identity());
+        assertNull(map.get("4"));
+
+        // 能实时反映原始集合的变化
+        set.add("4");
+        assertEquals("4", map.get("4"));
     }
 }

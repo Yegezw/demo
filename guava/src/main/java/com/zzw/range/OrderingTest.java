@@ -19,16 +19,20 @@ public class OrderingTest
     /*
      * Ordering.compare()
      *
-     * Ordering.compound()
+     * ******************************
      *
-     * Ordering.allEqual()
-     * Ordering.arbitrary()
-     * Ordering.from(Comparator)
+     * 相等 Ordering.allEqual()
+     * 随机 Ordering.arbitrary()
+     * 实现 Ordering.from(Comparator)
      *
-     * Ordering.natural()
-     * Ordering.usingToString()
+     * 正常 Ordering.natural()
+     * 字典 Ordering.usingToString()
      *
-     * Ordering.explicit()
+     * 指定 Ordering.explicit()
+     *
+     * 组合 Ordering.compound()
+     * 转换 Ordering.onResultOf()
+     * 词典 Ordering.lexicographical()
      *
      * ******************************
      *
@@ -36,10 +40,6 @@ public class OrderingTest
      * Ordering.nullsLast()
      *
      * Ordering.reverse()
-     *
-     * Ordering.onResultOf()
-     *
-     * Ordering.lexicographical()
      *
      * Ordering.sortedCopy()
      * Ordering.immutableSortedCopy()

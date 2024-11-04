@@ -48,8 +48,8 @@ public class RangeTest
      *
      * Range<C> encloseAll(Iterable<C> values)
      *
-     * Range<C> upTo(C endpoint, BoundType boundType)
-     * Range<C> downTo(C endpoint, BoundType boundType)
+     * Range<C> upTo(C endpoint, BoundType boundType)      Bottom
+     * Range<C> downTo(C endpoint, BoundType boundType)    Top
      * Range<C> range(C lower, BoundType lowerType, C upper, BoundType upperType)
      *
      * Range<C> canonical(DiscreteDomain<C> domain) 规范形式
@@ -69,10 +69,10 @@ public class RangeTest
      * Range.lowerBoundType()
      * Range.upperBoundType()
      *
-     * Range.encloses()
-     * Range.isConnected()
-     * Range.intersection()
-     * Range.span()
+     * 包含 Range.encloses()
+     * 相连 Range.isConnected()
+     * 交集 Range.intersection()
+     * 组合 Range.span()
      */
 
     @Test

@@ -3,6 +3,10 @@ package com.zzw.string;
 import com.google.common.base.Strings;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
@@ -93,7 +97,7 @@ public class StringsTest
 
         // null 值
         String template = "This is a %s template with a null value.";
-        String result   = Strings.lenientFormat(template, (Object) null);
-        System.out.println(result); // This is a null template with a null value.
+        String result3  = Strings.lenientFormat(template, (Object) null);
+        System.out.println(result3); // This is a null template with a null value.
     }
 }

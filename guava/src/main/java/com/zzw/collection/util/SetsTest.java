@@ -49,6 +49,7 @@ public class SetsTest
          * Sets.combinations(Set, int)
          *
          * 笛卡尔积
+         * Sets.cartesianProduct(Set...)
          * Sets.cartesianProduct(List<Set>)
          */
     }

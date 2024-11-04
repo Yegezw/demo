@@ -6,6 +6,8 @@ import com.google.common.collect.RangeSet;
 import com.google.common.collect.TreeRangeSet;
 import org.junit.jupiter.api.Test;
 
+import java.util.Set;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -63,8 +65,9 @@ public class RangeSetTest
 
         // 分割    { [1..6), [10..20) }
         rangeSet.remove(Range.open(5, 10).canonical(domain));
-        
-        rangeSet.asRanges();
+
+        Set<Range<Integer>> ranges = rangeSet.asRanges();
+        System.out.println(ranges);
     }
 
     @Test

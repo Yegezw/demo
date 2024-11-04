@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Multimap Key : Multi Value
@@ -18,6 +17,7 @@ public class MultimapTest
 
     /*
      * ListMultimap 或 SetMultimap 分别将 Key 映射到 List 或 Set
+     * 没有映射到空集合的键: 键要么映射到至少一个值，要么根本不存在于 Multimap 中
      *
      * Implementation	        Keys behave like    Values behave like
      * ArrayListMultimap        HashMap             ArrayList
@@ -27,13 +27,16 @@ public class MultimapTest
      * TreeMultimap             TreeMap             TreeSet
      * ImmutableListMultimap    ImmutableMap        ImmutableList
      * ImmutableSetMultimap     ImmutableMap        ImmutableSet
-     * 
+     *
      * 除了不可变的实现之外，这些实现中的每一个都支持 null 键和值
      */
 
     /*
      * Multimap
      * SortedSetMultimap
+     *
+     * get(缺失的 Key) 不会返回 null，对视图的更改将写入底层 Multimap
+     * 当你希望 get(缺失的 Key) 为 null 而不是一个新的、可写的空集合时，你可以使用 asMap().get(key)
      */
 
     @Test
@@ -117,6 +120,7 @@ public class MultimapTest
         Multiset<String> keys = multimap.keys();
         assertEquals("[李四 x 3, 张三 x 3]", keys.toString());
 
+        // 将 Multimap 中的所有值视为 "扁平化" 的 Collection<V>
         Collection<String> values = multimap.values();
         System.out.println(values);
 

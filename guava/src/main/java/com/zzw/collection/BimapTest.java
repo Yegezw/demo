@@ -18,6 +18,8 @@ public class BimapTest
      * ImmutableBiMap    ImmutableMap
      * EnumBiMap         EnumMap
      * EnumHashBiMap     EnumMap
+     *
+     * BiMap<K, V> synchronizedBiMap(BiMap<K, V> bimap) 位于 Maps 中
      */
 
     @Test

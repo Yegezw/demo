@@ -106,6 +106,7 @@ public class TableTest
         // 所有数据 RowKey + ColumnKye 为组合键
         Set<Table.Cell<String, String, String>> cells = table.cellSet();
         System.out.println(cells);
+        System.out.println();
 
         // RowKey 为键
         Map<String, Map<String, String>> map1 = table.rowMap();
@@ -114,6 +115,7 @@ public class TableTest
         System.out.println(map1);
         System.out.println(set1);
         System.out.println(row1);
+        System.out.println();
 
         // ColumnKye 为键
         Map<String, Map<String, String>> map2 = table.columnMap();

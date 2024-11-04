@@ -18,7 +18,7 @@ public class MultisetTest
 {
 
     /*
-     * 可重复集合 Multiset 的核心在 count，不能为负数
+     * 可重复集合 Multiset 的核心在 count，不能为负数，为 0 则不会出现在任何视图中
      * 1、HashMultiset          没有顺序，元素存放于 HashMap
      * 2、TreeMultiset          自然顺序，元素存放于 TreeMap
      * 3、LinkedHashMultiset    插入顺序，元素存放于 LinkedHashMap
@@ -40,11 +40,11 @@ public class MultisetTest
      * add(E, int)
      *
      * contains(Object)
-     * containsAll(Collection<?>)
+     * containsAll(Collection<?>)    不考虑个数
      *
      * count(Object)
-     * setCount(E)
      * setCount(E, int)
+     * setCount(E, int, int)
      *
      * remove(Object)
      * remove(Object, int)
@@ -64,7 +64,7 @@ public class MultisetTest
      *
      * SortedMultiset
      *
-     * Comparator<? super E> comparator()
+     * Comparator<? super E> comparator()    比较器
      *
      * Entry<E> firstEntry()
      * Entry<E> lastEntry()
@@ -73,9 +73,9 @@ public class MultisetTest
      * Entry<E> pollLastEntry()
      *
      * NavigableSet<E> elementSet()
-     * Set<Entry<E>> entrySet()
+     * Set<Entry<E>>   entrySet()
      *
-     * SortedMultiset<E> descendingMultiset()
+     * SortedMultiset<E> descendingMultiset()    翻转
      * SortedMultiset<E> headMultiset(E upperBound, BoundType boundType)
      * SortedMultiset<E> tailMultiset(E lowerBound, BoundType boundType)
      * SortedMultiset<E> subMultiset(E lowerBound, BoundType lowerBoundType, E upperBound, BoundType upperBoundType)
