@@ -11,4 +11,5 @@
     <tree path="/guava/src/main/java/com/zzw/base/math/Info.java" icon="VcsChangelist" textColor="255,0,0"/>
     <tree path="/guava/src/main/java/com/zzw/base/util/Info.java" icon="VcsChangelist" textColor="255,0,0"/>
     <tree path="/guava/src/main/java/com/zzw/collection/Info.java" icon="VcsChangelist" textColor="255,0,0"/>
+    <tree path="/guava/src/main/java/com/zzw/more" title="反射+事件+Hash"/>
 </trees>
