@@ -9,6 +9,7 @@
 
     <modules>
         <module>guava</module>
+        <module>io</module>
     </modules>
 
     <properties>
