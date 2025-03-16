@@ -7,11 +7,15 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.util.AttributeKey;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class NettyServer
 {
+
+    private static final AttributeKey<String>  SERVER_GLOBAL_ATTR_KEY     = AttributeKey.valueOf("serverGlobalAttr");
+    private static final AttributeKey<Integer> CLIENT_CONNECTION_TYPE_KEY = AttributeKey.valueOf("clientType");
 
     public static void main(String[] args) throws InterruptedException
     {
@@ -23,12 +27,20 @@ public class NettyServer
             ServerBootstrap bootstrap = new ServerBootstrap();
             bootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
+                    .attr(SERVER_GLOBAL_ATTR_KEY, "NettyServer-1.0") // 设置全局属性 ssc
+                    .childAttr(CLIENT_CONNECTION_TYPE_KEY, 1)  // 设置客户端连接属性 sc
                     .childHandler(
                             new ChannelInitializer<SocketChannel>()
                             {
                                 @Override
                                 protected void initChannel(SocketChannel channel)
                                 {
+                                    String  serverVersion = channel.parent().attr(SERVER_GLOBAL_ATTR_KEY).get();
+                                    Integer clientType    = channel.attr(CLIENT_CONNECTION_TYPE_KEY).get();
+
+                                    System.out.println("Server Version: " + serverVersion);
+                                    System.out.println("Client Type: " + clientType);
+
                                     ChannelPipeline pipeline = channel.pipeline();
                                     pipeline.addLast(new StringDecoder());
                                     pipeline.addLast(new StringEncoder());
@@ -55,7 +67,8 @@ public class NettyServer
         @Override
         public void channelRead(ChannelHandlerContext ctx, Object msg)
         {
-            System.out.println("Received: " + msg);
+            Integer clientType = ctx.channel().attr(CLIENT_CONNECTION_TYPE_KEY).get();
+            System.out.println("[ClientType=" + clientType + "] Received: " + msg);
             ctx.writeAndFlush("Hello, Client!");
         }
 
