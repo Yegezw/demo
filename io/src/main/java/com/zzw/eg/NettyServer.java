@@ -7,6 +7,8 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 import io.netty.util.AttributeKey;
 import lombok.extern.slf4j.Slf4j;
 
@@ -29,6 +31,7 @@ public class NettyServer
                     .channel(NioServerSocketChannel.class)
                     .attr(SERVER_GLOBAL_ATTR_KEY, "NettyServer-1.0") // 设置全局属性 ssc
                     .childAttr(CLIENT_CONNECTION_TYPE_KEY, 1)  // 设置客户端连接属性 sc
+                    .handler(new LoggingHandler(LogLevel.INFO))      // ssc 日志
                     .childHandler(
                             new ChannelInitializer<SocketChannel>()
                             {
@@ -42,6 +45,7 @@ public class NettyServer
                                     System.out.println("Client Type: " + clientType);
 
                                     ChannelPipeline pipeline = channel.pipeline();
+                                    pipeline.addLast(new LoggingHandler(LogLevel.INFO)); // sc 日志
                                     pipeline.addLast(new StringDecoder());
                                     pipeline.addLast(new StringEncoder());
                                     pipeline.addLast(new ServerHandler());

@@ -7,6 +7,8 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 import io.netty.util.AttributeKey;
 import lombok.extern.slf4j.Slf4j;
 
@@ -36,6 +38,7 @@ public class NettyClient
                                     System.out.println("Client UserID: " + userId);
 
                                     ChannelPipeline pipeline = channel.pipeline();
+                                    pipeline.addLast(new LoggingHandler(LogLevel.INFO)); // sc 日志
                                     pipeline.addLast(new StringDecoder());
                                     pipeline.addLast(new StringEncoder());
                                     pipeline.addLast(new ClientHandler());
