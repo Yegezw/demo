@@ -27,6 +27,7 @@ public class NettyClient
             Bootstrap bootstrap = new Bootstrap();
             bootstrap.group(group)
                     .channel(NioSocketChannel.class)
+                    .option(ChannelOption.SO_KEEPALIVE, true)
                     .attr(CLIENT_USER_ID_KEY, "user123")
                     .handler(
                             new ChannelInitializer<SocketChannel>()

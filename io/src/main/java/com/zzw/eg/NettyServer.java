@@ -29,9 +29,12 @@ public class NettyServer
             ServerBootstrap bootstrap = new ServerBootstrap();
             bootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
+                    .option(ChannelOption.SO_BACKLOG, 128)
                     .attr(SERVER_GLOBAL_ATTR_KEY, "NettyServer-1.0") // 设置全局属性 ssc
-                    .childAttr(CLIENT_CONNECTION_TYPE_KEY, 1)  // 设置客户端连接属性 sc
                     .handler(new LoggingHandler(LogLevel.INFO))      // ssc 日志
+
+                    .childOption(ChannelOption.SO_KEEPALIVE, true)
+                    .childAttr(CLIENT_CONNECTION_TYPE_KEY, 1)  // 设置客户端连接属性 sc
                     .childHandler(
                             new ChannelInitializer<SocketChannel>()
                             {
@@ -51,9 +54,7 @@ public class NettyServer
                                     pipeline.addLast(new ServerHandler());
                                 }
                             }
-                    )
-                    .option(ChannelOption.SO_BACKLOG, 128)
-                    .childOption(ChannelOption.SO_KEEPALIVE, true);
+                    );
 
             ChannelFuture future = bootstrap.bind(8080).sync();
             System.out.println("Server started on port 8080");
