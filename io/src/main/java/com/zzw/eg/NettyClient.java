@@ -62,7 +62,14 @@ public class NettyClient
         public void channelActive(ChannelHandlerContext ctx)
         {
             String userId = ctx.channel().attr(CLIENT_USER_ID_KEY).get();
-            ctx.writeAndFlush("Hello, Server! I am " + userId);
+            ChannelFuture future = ctx.writeAndFlush("Hello, Server! I am " + userId);
+            future.addListener(
+                    (ChannelFuture f) ->
+                    {
+                        if (f.isSuccess()) System.out.println("Message sent successfully");
+                        else System.err.println("Failed to send message: " + f.cause());
+                    }
+            );
         }
 
         @Override

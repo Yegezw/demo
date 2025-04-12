@@ -74,7 +74,14 @@ public class NettyServer
         {
             Integer clientType = ctx.channel().attr(CLIENT_CONNECTION_TYPE_KEY).get();
             System.out.println("[ClientType=" + clientType + "] Received: " + msg);
-            ctx.writeAndFlush("Hello, Client!");
+            ChannelFuture future = ctx.writeAndFlush("Hello, Client!");
+            future.addListener(
+                    (ChannelFuture f) ->
+                    {
+                        if (f.isSuccess()) System.out.println("Message sent successfully");
+                        else System.err.println("Failed to send message: " + f.cause());
+                    }
+            );
         }
 
         @Override
