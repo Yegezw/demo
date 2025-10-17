@@ -243,6 +243,7 @@ public class Base1Test
             long remaining     = size - left;
             long transferCount = Math.min(BUFFER_SIZE, remaining);
             left += inChannel.transferTo(left, transferCount, outChannel);
+            // left += outChannel.transferFrom(inChannel, left, transferCount);
         }
 
         inChannel.close();
