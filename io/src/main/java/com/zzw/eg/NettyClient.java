@@ -28,6 +28,7 @@ public class NettyClient
             bootstrap.group(group)
                     .channel(NioSocketChannel.class)
                     .option(ChannelOption.SO_KEEPALIVE, true)
+                    // .option(ChannelOption.SO_LINGER, 0)
                     .attr(CLIENT_USER_ID_KEY, "user123")
                     .handler(
                             new ChannelInitializer<SocketChannel>()
@@ -76,6 +77,7 @@ public class NettyClient
         public void channelRead(ChannelHandlerContext ctx, Object msg)
         {
             System.out.println("Received: " + msg);
+            // ctx.close();
         }
 
         @Override
