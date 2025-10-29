@@ -21,6 +21,9 @@ public class NettyServer
 
     public static void main(String[] args) throws InterruptedException
     {
+        // 每 60 秒进行缓存修剪
+        System.setProperty("io.netty.allocator.cacheTrimIntervalMillis", "60000");
+
         EventLoopGroup bossGroup   = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
@@ -57,6 +60,7 @@ public class NettyServer
                     );
 
             ChannelFuture future = bootstrap.bind(8080).sync();
+            DirectorMemoryReporter.init();
             System.out.println("Server started on port 8080");
             future.channel().closeFuture().sync();
         }
