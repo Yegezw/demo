@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <trees>
-    <tree path="/guava/src/main/java/com/zzw/string" title="字符串处理"/>
-    <tree path="/guava/src/main/java/com/zzw/base" title="基础"/>
-    <tree path="/guava/src/main/java/com/zzw/range" title="范围"/>
-    <tree path="/guava/src/main/java/com/zzw/collection" title="容器"/>
-    <tree path="/guava/src/main/java/com/zzw/collection/util" title="容器工具"/>
-    <tree path="/guava/src/main/java/com/zzw/functional" title="函数式"/>
-    <tree path="/guava/src/main/java/com/zzw/base/util" title="基础类型工具类"/>
-    <tree path="/guava/src/main/java/com/zzw/base/math" title="数学运算工具类"/>
-    <tree path="/guava/src/main/java/com/zzw/base/math/Info.java" icon="VcsChangelist" textColor="255,0,0"/>
-    <tree path="/guava/src/main/java/com/zzw/base/util/Info.java" icon="VcsChangelist" textColor="255,0,0"/>
-    <tree path="/guava/src/main/java/com/zzw/collection/Info.java" icon="VcsChangelist" textColor="255,0,0"/>
-    <tree path="/guava/src/main/java/com/zzw/more" title="反射+事件+Hash"/>
+    <tree path="/simple/guava/src/main/java/com/zzw/string" title="字符串处理"/>
+    <tree path="/simple/guava/src/main/java/com/zzw/base" title="基础"/>
+    <tree path="/simple/guava/src/main/java/com/zzw/range" title="范围"/>
+    <tree path="/simple/guava/src/main/java/com/zzw/collection" title="容器"/>
+    <tree path="/simple/guava/src/main/java/com/zzw/collection/util" title="容器工具"/>
+    <tree path="/simple/guava/src/main/java/com/zzw/functional" title="函数式"/>
+    <tree path="/simple/guava/src/main/java/com/zzw/base/util" title="基础类型工具类"/>
+    <tree path="/simple/guava/src/main/java/com/zzw/base/math" title="数学运算工具类"/>
+    <tree path="/simple/guava/src/main/java/com/zzw/base/math/Info.java" icon="VcsChangelist" textColor="255,0,0"/>
+    <tree path="/simple/guava/src/main/java/com/zzw/base/util/Info.java" icon="VcsChangelist" textColor="255,0,0"/>
+    <tree path="/simple/guava/src/main/java/com/zzw/collection/Info.java" icon="VcsChangelist" textColor="255,0,0"/>
+    <tree path="/simple/guava/src/main/java/com/zzw/more" title="反射+事件+Hash"/>
 </trees>
